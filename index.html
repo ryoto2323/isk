@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>ISK | Interior Renovation</title>
+    <meta name="description" content="対話から生まれる、確かな空間。東京・神奈川の店舗・マンションリノベーション ISK" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Noto Serif JP (Japanese), Montserrat (English), Roboto Mono (Specs) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Serif+JP:wght@200;300;400;500&family=Roboto+Mono:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Noto Serif JP"', 'serif'],
+              sans: ['"Montserrat"', 'sans-serif'],
+              mono: ['"Roboto Mono"', 'monospace'],
+            },
+            colors: {
+              isk: {
+                bg: '#F9F9F7', // Washi-like off-white
+                text: '#1C1C1C', // Sumiro (Dark Charcoal)
+                gold: '#D4C4A8', // Champagne Gold (Muted)
+                line: '#E0E0E0',
+                dark: '#121212', // For contact section
+              }
+            },
+            letterSpacing: {
+              'widest-xl': '0.25em',
+              'widest-2xl': '0.3em',
+            },
+            writingMode: {
+              'vertical-rl': 'vertical-rl',
+            },
+            cursor: {
+              none: 'none',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F9F9F7;
+        color: #1C1C1C;
+        -webkit-font-smoothing: antialiased;
+        cursor: none; /* Hide default cursor */
+      }
+      
+      /* Noise Texture */
+      .bg-noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 9998;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      
+      /* Architectural Grid */
+      .bg-grid {
+        background-size: 60px 60px;
+        background-image:
+          linear-gradient(to right, rgba(28, 28, 28, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(28, 28, 28, 0.03) 1px, transparent 1px);
+      }
+
+      .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+      }
+
+      /* Hide scrollbar completely for immersion */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      
+      /* Matte Image Filter */
+      .img-matte {
+        filter: contrast(0.95) brightness(1.02) sepia(0.05);
+      }
+      
+      /* Smooth Scrolling (if handled by CSS) */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "framer-motion": "https://esm.sh/framer-motion@^12.33.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

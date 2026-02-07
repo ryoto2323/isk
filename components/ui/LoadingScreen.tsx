@@ -39,14 +39,17 @@ export const LoadingScreen: React.FC = () => {
 
         {/* Logo Container */}
         <div className="relative z-10 overflow-hidden p-4">
-          <motion.span 
+          <motion.div 
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1, delay: 1, ease: [0.76, 0, 0.24, 1] }}
-            className="block text-7xl md:text-9xl font-sans font-bold tracking-widest text-isk-text"
           >
-            ISK
-          </motion.span>
+             <img 
+                src="https://github.com/ryoto2323/isk/blob/main/public/zuya.png?raw=true" 
+                alt="ISK Logo" 
+                className="h-24 md:h-32 w-auto object-contain" 
+            />
+          </motion.div>
         </div>
 
         {/* Vertical Text Reveal */}

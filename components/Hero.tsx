@@ -1,8 +1,23 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, Hammer, RefreshCw } from 'lucide-react';
 
+const HERO_IMAGES = [
+  "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2700&auto=format&fit=crop",
+  "https://github.com/ryoto2323/isk/blob/main/public/zuyaa.jpg?raw=true"
+];
+
 export const Hero: React.FC = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden flex items-end justify-start bg-isk-bg">
       
@@ -38,24 +53,31 @@ export const Hero: React.FC = () => {
             animate={{ clipPath: "inset(0% 0 0 0)" }}
             transition={{ duration: 1.5, delay: 3.5, ease: [0.76, 0, 0.24, 1] }}
           >
-            {/* Parallax Image */}
-            <motion.div 
-              className="absolute inset-0"
-              initial={{ scale: 1.1 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 2, delay: 3.5, ease: "easeOut" }}
-            >
-                {/* Base dark overlay */}
-                <div className="absolute inset-0 bg-black/20 z-10" /> 
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10" />
-                
-                <img 
-                  src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2700&auto=format&fit=crop" 
-                  alt="Artisan Renovation" 
-                  className="w-full h-full object-cover img-matte"
-                />
-            </motion.div>
+            {/* Static Overlays (Consistent across slides) */}
+            <div className="absolute inset-0 bg-black/20 z-10" /> 
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10" />
+
+            {/* Cross-fading Images */}
+            <AnimatePresence>
+                <motion.div 
+                  key={currentImageIndex}
+                  className="absolute inset-0"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ 
+                      opacity: { duration: 2, ease: "easeInOut" }
+                  }}
+                >
+                    <img 
+                      src={HERO_IMAGES[currentImageIndex]} 
+                      alt="Artisan Renovation" 
+                      className={`w-full h-full object-cover img-matte ${
+                        currentImageIndex === 1 ? 'object-[85%_center] md:object-center' : 'object-center'
+                      }`}
+                    />
+                </motion.div>
+            </AnimatePresence>
           </motion.div>
       </div>
 

@@ -2,7 +2,8 @@ export interface Project {
   id: number;
   title: string;
   category: string;
-  image: string;
+  beforeImage: string;
+  afterImage: string;
   size: 'large' | 'medium' | 'small';
 }
 

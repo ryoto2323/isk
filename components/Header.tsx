@@ -92,9 +92,13 @@ export const Header: React.FC = () => {
                 <a 
                     href="#" 
                     onClick={(e) => handleNavClick(e, '#')}
-                    className="pointer-events-auto font-sans font-bold text-2xl tracking-widest-xl relative group"
+                    className="pointer-events-auto relative group block"
                 >
-                    ISK
+                    <img 
+                      src="https://github.com/ryoto2323/isk/blob/main/public/zuya.png?raw=true" 
+                      alt="ISK Logo" 
+                      className="h-8 md:h-10 w-auto object-contain" 
+                    />
                     <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all duration-500 ease-out group-hover:w-full" />
                 </a>
 
@@ -147,7 +151,13 @@ export const Header: React.FC = () => {
 
             {/* Header in Overlay */}
             <div className="flex justify-between items-start relative z-10">
-                <span className="font-sans font-bold text-2xl tracking-widest-xl">ISK</span>
+                <div className="block">
+                     <img 
+                      src="https://github.com/ryoto2323/isk/blob/main/public/zuya.png?raw=true" 
+                      alt="ISK Logo" 
+                      className="h-8 md:h-10 w-auto object-contain" 
+                    />
+                </div>
                 <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="flex items-center space-x-2 group"
@@ -189,8 +199,9 @@ export const Header: React.FC = () => {
                     <p className="font-serif text-xs opacity-60 tracking-wider">Tokyo / Kanagawa / Saitama</p>
                  </div>
                  <div className="flex space-x-8">
-                    <a href="#" className="font-mono text-xs tracking-widest hover:text-isk-gold transition-colors">INSTAGRAM</a>
-                    <a href="#" className="font-mono text-xs tracking-widest hover:text-isk-gold transition-colors">CONTACT</a>
+                    {/* Non-clickable Instagram link */}
+                    <span className="font-mono text-xs tracking-widest opacity-30 cursor-default">INSTAGRAM</span>
+                    <a href="#contact" onClick={(e) => handleNavClick(e, '#contact')} className="font-mono text-xs tracking-widest hover:text-isk-gold transition-colors">CONTACT</a>
                  </div>
             </div>
           </motion.div>

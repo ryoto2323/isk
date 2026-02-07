@@ -38,7 +38,11 @@ export const ScrollProgress: React.FC = () => {
       
       {/* Tape Housing (Top Anchor) */}
       <div className="absolute top-0 right-0 w-12 h-16 bg-[#1C1C1C] z-20 flex items-center justify-center shadow-2xl border-b-2 border-isk-gold">
-         <span className="font-bold text-isk-gold text-[10px] tracking-widest">ISK</span>
+         <img 
+            src="https://github.com/ryoto2323/isk/blob/main/public/zuya.png?raw=true" 
+            alt="ISK" 
+            className="w-8 h-auto object-contain" 
+         />
       </div>
 
       {/* The Physical Tape */}

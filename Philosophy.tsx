@@ -45,9 +45,9 @@ export const Philosophy: React.FC = () => {
                 >
                     <div className="absolute top-4 -left-4 w-full h-full border border-isk-text/10 z-0 hidden md:block transition-all duration-700 group-hover:top-2 group-hover:-left-2"></div>
                     <img 
-                        src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=2070&auto=format&fit=crop" 
+                        src="https://github.com/ryoto2323/isk/blob/main/public/zuyabb.png?raw=true" 
                         alt="Meeting" 
-                        className="w-full h-[300px] md:h-[500px] object-cover img-matte relative z-10 grayscale group-hover:grayscale-0 transition-all duration-1000"
+                        className="w-full h-[300px] md:h-[500px] object-cover img-matte relative z-10 transition-all duration-1000"
                     />
                 </motion.div>
                 
@@ -85,9 +85,9 @@ export const Philosophy: React.FC = () => {
                 >
                     <div className="absolute -top-4 -right-4 w-full h-full border border-isk-text/10 z-0 hidden md:block transition-all duration-700 group-hover:-top-2 group-hover:-right-2"></div>
                     <img 
-                        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" 
+                        src="https://github.com/ryoto2323/isk/blob/main/public/zuyacc.png?raw=true" 
                         alt="Construction site" 
-                        className="w-full h-[300px] md:h-[500px] object-cover img-matte relative z-10 grayscale group-hover:grayscale-0 transition-all duration-1000"
+                        className="w-full h-[300px] md:h-[500px] object-cover img-matte relative z-10 transition-all duration-1000"
                     />
                 </motion.div>
                 
@@ -123,9 +123,9 @@ export const Philosophy: React.FC = () => {
                 >
                     <div className="absolute bottom-4 -left-4 w-full h-full border border-isk-text/10 z-0 hidden md:block transition-all duration-700 group-hover:bottom-2 group-hover:-left-2"></div>
                     <img 
-                        src="https://images.unsplash.com/photo-1588265057032-15f5d638703c?q=80&w=2070&auto=format&fit=crop" 
+                        src="https://github.com/ryoto2323/isk/blob/main/public/zuyaee.jpg?raw=true" 
                         alt="Details" 
-                        className="w-full h-[300px] md:h-[500px] object-cover img-matte relative z-10 grayscale group-hover:grayscale-0 transition-all duration-1000"
+                        className="w-full h-[300px] md:h-[500px] object-cover img-matte relative z-10 transition-all duration-1000"
                     />
                 </motion.div>
                 
